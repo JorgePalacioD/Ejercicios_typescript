@@ -1,6 +1,6 @@
 // Clase base "Vehículo"
 class Vehículo {
-    constructor(private nombre: string) {}
+    constructor(public nombre: string) {}
   
     // Método genérico para desplazarse
     desplazarse() {

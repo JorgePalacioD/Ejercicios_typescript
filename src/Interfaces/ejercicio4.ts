@@ -22,21 +22,21 @@ interface BaseObject {
   }
   
   // Función genérica para imprimir los datos de cualquier objeto que implemente "BaseObject"
-  function printObjectData<T extends BaseObject>(object: T) {
-    console.log("ID:", object.id);
+  function printObjectData<T extends BaseObject>(obj: T) {
+    console.log("ID:", obj.id);
     // Comprueba el tipo de objeto y muestra propiedades específicas
-    if ('name' in object) {
-      const user = object as User;
+    if ('email' in obj) {
+      const user = obj as unknown as User;
       console.log("Name:", user.name);
       console.log("Email:", user.email);
     }
-    if ('price' in object) {
-      const product = object as Product;
+    if ('price' in obj) {
+      const product = obj as unknown as Product;
       console.log("Product Name:", product.name);
       console.log("Price:", product.price);
     }
-    if ('orderNumber' in object) {
-      const order = object as Order;
+    if ('orderNumber' in obj) {
+      const order = obj as unknown as Order;
       console.log("Order Number:", order.orderNumber);
       console.log("Items:", order.items);
     }
